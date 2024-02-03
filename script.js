@@ -104,3 +104,10 @@ const timer = (duration, display) => {
     );
   }, 1000);
 };
+
+function rangeSlide(value) {
+    if (started) {
+    } else {
+      document.getElementById("timer").innerHTML = `${value}:00`;
+    }
+  }
