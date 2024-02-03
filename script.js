@@ -7,15 +7,22 @@ let paused = false;
 let holder;
 let resetHolderMin;
 let resetHolderSec;
+let started = false;
 
 function rangeSlide(value) {
-  document.getElementById("timer").innerHTML = `${value}:00`;
+  if (started) {
+  } else {
+    document.getElementById("timer").innerHTML = `${value}:00`;
+  }
 }
 
 btnStart.addEventListener("click", () => {
   let duration;
 
-  
+  started = true;
+
+  document.getElementById("minute").disabled = true;
+
   console.log(minutes.value);
 
   if (paused) {
@@ -31,8 +38,7 @@ btnStart.addEventListener("click", () => {
 
   resetHolderSec = resetHolderSec < 10 ? "0" + resetHolderSec : resetHolderSec;
 
-
-  display = document.getElementById("timer");
+  display = document.querySelector(".timer");
 
   btnStart.classList.remove("show");
   btnStart.classList.add("hide");
@@ -50,7 +56,6 @@ const timer = (duration, display) => {
     minutes = Math.floor(timer / 60);
     seconds = Math.floor(timer % 60);
 
-    
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
     display.innerHTML = `${minutes}:${seconds}`;
@@ -65,6 +70,8 @@ const timer = (duration, display) => {
       btnStart.classList.remove("hide");
       btnStart.classList.add("show");
       clearInterval(interval);
+      document.getElementById("minute").disabled = false;
+      started = false;
     }
 
     btnPause.addEventListener(
@@ -91,6 +98,8 @@ const timer = (duration, display) => {
         btnStart.classList.remove("hide");
         btnStart.classList.add("show");
         paused = false;
+        started = false;
+        document.getElementById("minute").disabled = false;
       })
     );
   }, 1000);

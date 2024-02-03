@@ -8,6 +8,7 @@ body {
   place-content: center;
   height: 85vh;
   overflow: hidden;
+  user-select: none;
 }
 
 
@@ -50,7 +51,7 @@ button {
   display: none;
 }
 
-.timer {
+#timer {
   font-size: 100px;
   font-weight: 700;
   text-align: center;
@@ -102,9 +103,9 @@ button {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #000000;
   cursor: grab;
-  border: 4px solid #ffffff;
+  border: 2px solid #ffffff;
   box-shadow: -407px 0 0 400px #ffffff;
 }
 
