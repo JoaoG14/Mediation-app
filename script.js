@@ -15,6 +15,7 @@ btnStart.addEventListener("click", () => {
     duration = holder;
     paused = false;
   } else {
+    document.getElementById("bell").play();
     duration = parseInt(minutes.value) * 60 + parseInt(seconds.value);
   }
 
@@ -26,6 +27,7 @@ btnStart.addEventListener("click", () => {
   btnPause.classList.add("show");
 
   timer(duration, display);
+  
 });
 
 const timer = (duration, display) => {
@@ -71,6 +73,7 @@ const timer = (duration, display) => {
         btnPause.classList.add("hide");
         btnStart.classList.remove("hide");
         btnStart.classList.add("show");
+        paused = false;
       })
     );
   }, 1000);

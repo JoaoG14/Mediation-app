@@ -6,6 +6,11 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+header {
+    text-align: center;
+    padding: 50px;
+}
+
 label {
   font-size: 30px;
   padding-right: 20px;
@@ -65,5 +70,5 @@ button {
 }
 
 .container {
-  margin-top: 270px;
+  margin-top: 170px;
 }
