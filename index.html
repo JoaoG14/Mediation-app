@@ -12,51 +12,15 @@
     />
   </head>
   <body>
+    <div class="container">
+        <div id="timer" class="timer">10:00</div>
 
-    <header><img src="assets/meditation.png" alt=""></header>
-
- 
-       <div class="container">
-      <div id="timer" class="timer">10:00</div>
-
-      <div id="sliderContainer">
+        <div id="sliderContainer">
         
-        <Input class="range" type="range"
-         value="10" min="1" max="99" onChange="rangeSlide(this.value)"
-          onmousemove="rangeSlide(this.value)"></Input>
-    </div>
-
-    <script type="text/javascript">
-        function rangeSlide(value) {
-          document.getElementById("timer").innerHTML = `${value}:00`;
-        }
-      </script>
-        
-      <section class="align-inputs">
-        <div class="input-container">
-          <label for="minute">Minutos</label>
-          <input
-            type="number"
-            name=""
-            id="minute"
-            value="00"          
-            max="120"
-            min="0"
-          />            
+            <Input class="range" id="minute" type="range"
+            value="10" min="1" max="99" onChange="rangeSlide(this.value)"
+            onmousemove="rangeSlide(this.value)"></Input>
         </div>
-
-        <div class="input-container">
-          <label for="second">Segundos</label>
-          <input
-            type="number"
-            name=""
-            id="second"
-            value="00"
-            max="59"
-            min="0"
-          />
-        </div>
-      </section>
 
       <div class="btn">
         <button id="btn-start" class="show">

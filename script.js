@@ -1,23 +1,36 @@
 const btnStart = document.getElementById("btn-start");
 const btnPause = document.getElementById("btn-pause");
 const reset = document.getElementById("btn-reset");
-const minutes = document.getElementById("minute");
-const seconds = document.getElementById("second");
+let minutes = document.getElementById("minute");
+
 let paused = false;
 let holder;
+let resetHolderMin;
+let resetHolderSec;
+
+function rangeSlide(value) {
+  document.getElementById("timer").innerHTML = `${value}:00`;
+}
 
 btnStart.addEventListener("click", () => {
   let duration;
 
-  console.log(paused);
+  
+  console.log(minutes.value);
 
   if (paused) {
     duration = holder;
     paused = false;
   } else {
     document.getElementById("bell").play();
-    duration = parseInt(minutes.value) * 60 + parseInt(seconds.value);
+    duration = parseInt(minutes.value) * 60;
   }
+
+  resetHolderMin = Math.floor(duration / 60);
+  resetHolderSec = Math.floor(duration % 60);
+
+  resetHolderSec = resetHolderSec < 10 ? "0" + resetHolderSec : resetHolderSec;
+
 
   display = document.getElementById("timer");
 
@@ -37,7 +50,7 @@ const timer = (duration, display) => {
     minutes = Math.floor(timer / 60);
     seconds = Math.floor(timer % 60);
 
-    minutes = minutes < 10 ? "0" + minutes : minutes;
+    
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
     display.innerHTML = `${minutes}:${seconds}`;
@@ -72,7 +85,7 @@ const timer = (duration, display) => {
       "click",
       (resetTime = () => {
         clearInterval(interval);
-        display.innerHTML = "00:00";
+        display.innerHTML = `${resetHolderMin}:${resetHolderSec}`;
         btnPause.classList.remove("show");
         btnPause.classList.add("hide");
         btnStart.classList.remove("hide");
