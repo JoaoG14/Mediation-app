@@ -27,7 +27,6 @@ btnStart.addEventListener("click", () => {
   btnPause.classList.add("show");
 
   timer(duration, display);
-  
 });
 
 const timer = (duration, display) => {
@@ -46,7 +45,12 @@ const timer = (duration, display) => {
     timer -= 1;
 
     if (timer < 0) {
+      document.getElementById("bell").play();
       display.innerHTML = "FIM!";
+      btnPause.classList.remove("show");
+      btnPause.classList.add("hide");
+      btnStart.classList.remove("hide");
+      btnStart.classList.add("show");
       clearInterval(interval);
     }
 
