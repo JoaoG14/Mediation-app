@@ -11,9 +11,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
-  <body>
+  <body >
     <div class="container">
+        <p id="focus">Focus on the breath</p>
+
         <div id="timer" class="timer">10:00</div>
+
 
         <div id="sliderContainer">
         
@@ -22,7 +25,23 @@
             onmousemove="rangeSlide(this.value)"></Input>
         </div>
 
+        <div class="time-btns">
+          <a id="one-minute">01</a>
+          <a id="five-minutes">05</a>
+          <a class="focus" id="ten-minutes">10</a>
+          <a id="thirty-minutes">30</a>
+          <a id="one-hour">1h</a>
+          <input type="number" id="custom-timer-input">
+          <a id="custom-timer"><i class="fa-solid fa-pencil"></i></a>
+        </div>
+ 
       <div class="btn">
+        <button id="btn-sound-on" class="show">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <button id="btn-sound-off" class="hide">
+          <i class="fa-solid fa-volume-xmark"></i>
+        </button> 
         <button id="btn-start" class="show">
           <i class="fa-solid fa-play"></i>
         </button>
@@ -32,14 +51,21 @@
         <button id="btn-reset">
           <i class="fa-solid fa-rotate-right"></i>
         </button>
+        <button id="" class="show">
+          <a href="settings.html"><i class="fa-solid fa-gear"></i></a>
+          
+        </button>
       </div>
+
     </div>
 
-    <audio src="assets/bells-1-72261.mp3" id="bell"></audio> 
+    <audio src="assets/bells-1-72261.mp3" id="bell"></audio>
+    <audio loop src="assets/ambient-sounds/forest-with-small-river-birds-and-nature-field-recording-6735.mp3" 
+    id="ambient-sound"></audio> 
     
-
-    
+    <script src="themes.js"></script>
+    <script src="script.js"></script>
   </body>
   
-  <script src="script.js"></script>
+  
 </html>

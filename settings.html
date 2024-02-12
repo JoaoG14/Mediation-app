@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Meditation</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="settings.css" />
+  </head>
+  <body>
+    <div class="container-settings">
+      <p id="focus">Settings</p>
+
+      <div id="theme-container">
+        <p id="themes">Theme:</p>
+        <div class="select-box">
+          <div class="options-container-themes">
+            <div class="option">
+              <input type="radio" class="radio" id="dark" name="category" />
+              <label for="dark">Dark</label>
+            </div>
+
+            <div class="option">
+              <input type="radio" class="radio" id="light" name="category" />
+              <label for="light">Light</label>
+            </div>
+
+            <div class="option">
+              <input type="radio" class="radio" id="blue" name="category" />
+              <label for="blue">Blue</label>
+            </div>
+
+            <div class="option">
+              <input type="radio" class="radio" id="green" name="category" />
+              <label for="green">Green</label>
+            </div>
+          </div>
+
+          <div class="selected-theme">Dark</div>
+        </div>
+      </div>
+
+      <!-- style settings
+
+        <div id="style-container">
+        <p id="styles">Style:</p>
+        <div class="select-box-styles">
+          <div class="options-container-styles">
+            <div class="style-option">
+              <input type="radio" class="radio" id="slider" name="category" />
+              <label for="slider">Slider</label>
+            </div>
+
+            <div class="style-option">
+              <input type="radio" class="radio" id="buttons" name="category" />
+              <label for="buttons">Buttons</label>
+            </div>
+          </div>
+
+          <div class="selected-style">Select</div>
+        </div>
+      </div>
+
+      -->
+
+      <!--
+
+        <div id="sound-container">
+        <p id="themes">Sounds:</p>
+        <div class="select-box">
+          <div class="options-container-sounds">
+            <div class="option">
+              <input type="radio" class="radio" id="forest" name="category" />
+              <label for="forest">Forest</label>
+            </div>
+
+            <div class="option">
+              <input type="radio" class="radio" id="birds" name="category" />
+              <label for="birds">Birds</label>
+            </div>
+        
+          <div class="option">
+            <input type="radio" class="radio" id="rain" name="category" />
+            <label for="rain">Rain</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="river" name="category" />
+            <label for="river">River</label>
+          </div>
+        </div>
+
+          <div class="selected-sound">Forest</div>
+        </div>
+      </div>
+
+      -->
+
+      
+      
+
+      <a href="index.html" id="back">close</a>
+
+      <script src="themes.js"></script>
+      <script src="styles.js"></script>
+    </div>
+
+    <audio src="assets/bells-1-72261.mp3" id="bell"></audio>
+    <audio
+      loop
+      src="assets/ambient-sounds/forest-with-small-river-birds-and-nature-field-recording-6735.mp3"
+      id="ambient-sound"
+    ></audio>
+    <audio loop id="birds-sound" src="assets/ambient-sounds/birds-19624.mp3"></audio>
+    <audio loop id="rain-sound" src="assets/ambient-sounds/light-rain-ambient-114354.mp3"></audio>
+    <audio loop id="river-sound" src="assets/ambient-sounds/relaxing-mountains-rivers-streams-running-water-18178.mp3"></audio>
+  </body>
+
+  
+</html>

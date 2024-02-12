@@ -1,24 +1,71 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 body {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--main-color);
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: grid;
   place-content: center;
   height: 85vh;
   overflow: hidden;
   user-select: none;
+  margin: 0;
+  padding: 0;
 }
 
+#Dark {
+  --main-color: black;
+  --second-color: white;
+  --slider-background: #111;
+  --box-shadow-slider: rgba(0, 0, 0, 1);
+  --select-box-bg: #101010;
+  --select-box-bg-hover: #1a1a1a;
+  --select-text: #f5f6fa;
+  --arrow: url("assets/arrow-down-white.svg");
+}
+
+#Light {
+  --main-color: white;
+  --second-color: black;
+  --slider-background: rgb(245, 245, 245);
+  --box-shadow-slider: rgb(223, 223, 223);
+  --select-box-bg: #efefef;
+  --select-box-bg-hover: #e2e2e2;
+  --select-text: #121212;
+  --arrow: url("assets/arrow-down-black.svg");
+}
+
+#Blue {
+  --main-color: rgb(28, 111, 255);
+  --second-color: white;
+  --slider-background: rgb(50, 125, 254);
+  --box-shadow-slider: rgb(34, 113, 250);
+  --select-box-bg: rgb(18, 89, 213);
+  --select-box-bg-hover: rgb(14, 77, 186);
+  --select-text: #f5f6fa;
+  --arrow: url("assets/arrow-down-white.svg");
+}
+
+#Green {
+  --main-color: #031916;
+  --second-color: white;
+  --slider-background: #021210;
+  --box-shadow-slider: #021412;
+  --select-box-bg: rgb(18, 89, 213);
+  --select-box-bg-hover: rgb(14, 77, 186);
+  --select-text: #f5f6fa;
+  --arrow: url("assets/arrow-down-white.svg");
+}
 
 label {
   font-size: 30px;
   padding-right: 20px;
-  color: white;
+  color: var(--second-color);
 }
 
-
+audio {
+  display: none;
+}
 
 input {
   font-size: 20px;
@@ -26,26 +73,60 @@ input {
 
 button {
   font-size: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--second-color);
   border-radius: 500px;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
 }
 
-#btn-reset, #btn-start, #btn-pause {
+.time-btns {
+  justify-content: center;
+}
+
+.time-btns a {
+  display: inline;
+  height: 10px;
+  width: 10px;
+  max-height: none;
+  background-color: transparent;
+  color: var(--second-color);
+  transition: all 0.3s ease;
+  margin: 10px;
+  padding: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#ten-minutes {
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+
+#focus {
+  color: var(--second-color);
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+}
+
+.btn button {
   background-color: transparent;
   border: none;
   outline: none;
-  color: white;
+  color: var(--second-color);
   font-size: 2em;
 }
 
-#btn-reset {
-    font-size: 1.75em;
+#btn-sound-off {
+  margin-right: 4px;
 }
 
-
+#btn-pause {
+  margin: 0 2px;
+}
 
 .hide {
   display: none;
@@ -55,7 +136,7 @@ button {
   font-size: 100px;
   font-weight: 700;
   text-align: center;
-  color: white;
+  color: var(--second-color);
 }
 
 .input-container {
@@ -74,11 +155,9 @@ button {
 }
 
 #sliderContainer {
-  
-  display: block;
-  
+  display: none;
+
   text-align: center;
-  
 }
 #rangeValue {
   position: relative;
@@ -91,21 +170,78 @@ button {
 .range {
   width: 300px;
   height: 15px;
-  -webkit-appearance: none;
-  background: #111;
+  appearance: none;
+  background: var(--slider-background);
   outline: none;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+  box-shadow: inset 0 0 5px var(--box-shadow-slider);
 }
 .range::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #000000;
+  background: var(--main-color);
   cursor: grab;
-  border: 2px solid #ffffff;
-  box-shadow: -407px 0 0 400px #ffffff;
+  border: 3px solid var(--second-color);
+  box-shadow: -407px 0 0 400px var(--second-color);
 }
 
+a:visited {
+  color: var(--second-color);
+}
+
+a:link {
+  color: var(--second-color);
+}
+
+a:hover {
+  color: var(--second-color);
+}
+
+a:active {
+  color: var(--second-color);
+}
+
+.container-settings {
+  height: 277px;
+  width: 304px;
+}
+
+#theme-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#style-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#sound-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*media query para mudar o slider no mobile
+
+@media (max-width: 950px) {
+  .time-btns a {
+    display: inline;
+  }
+
+  #sliderContainer {
+    display: none;
+  }
+}
+
+*/
+
+.slider {
+  display: none;
+}
+
+#custom-timer-input {
+  display: none;
+}
